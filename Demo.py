@@ -16,6 +16,11 @@ content = Utils.strToBase64('要打印的内容')
 jsonContent="[{\"Alignment\":0,\"BaseText\":\"" + content + "\",\"Bold\":0,\"FontSize\":0,\"PrintType\":0}]"
 result2 = PrintHelper.printContent('设备编号',jsonContent,0) #0改成用户设备绑定返回的OpenUserId即可
 
+#打印网页内容
+# 返回数据格式 {"TaskId":3949406,"Code":200,"Message":"成功"}
+printUrl= "您要打印的网页地址";#例：http://www.open.mstching.com/print-demo.html
+result4 = PrintHelper.printHtmlContent('设备编号',printUrl,0) #0改成用户设备绑定返回的OpenUserId即可
+
 #获取任务状态
 # 返回数据格式 {"State":1,"Code":200,"Message":"成功"}
 result3 = PrintHelper.getPrintTaskState(0) #0改成任务编号即可
