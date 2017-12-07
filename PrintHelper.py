@@ -31,7 +31,15 @@ def printContent(uuid,content,openUserId):
         'OpenUserId':openUserId
     }
     return sendPost(url,data)
-
+#打印网页信息
+def printHtmlContent(uuid,printUrl,openUserId):
+    url = PrintConfig.baseUrl + '/home/printhtmlcontent' + createParams()
+    data = {
+        'Uuid': uuid,
+        'PrintUrl':printUrl,
+        'OpenUserId': openUserId
+    }
+    return sendPost(url, data)
 #获取任务状态
 def getPrintTaskState(taskId):
     url = PrintConfig.baseUrl + '/home/getprinttaskstate' + createParams()
